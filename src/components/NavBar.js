@@ -19,8 +19,34 @@ const NavBar = () => {
     }
   }
 
+  const addMovieIcon = (
+    <NavLink
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/movie/create"
+    >
+      <i className="far fa-plus-square"></i>Add movie
+    </NavLink>
+  );
+
   const loggedInIcons = (
     <>
+      <NavLink
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/movies"
+    >
+      <i className="fas fa-stream"></i>Added movies
+      </NavLink>
+
+      <NavLink
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/movies"
+    >
+      <i className="fas fa-stream"></i>Reviews left
+      </NavLink>
+
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
         <i className="fas fa-sign-out-alt"></i>Sign out
       </NavLink>
@@ -54,7 +80,7 @@ const NavBar = () => {
             <img src={logo} alt="logo" height="45" />
           </Navbar.Brand>
         </NavLink>
-
+        {currentUser && addMovieIcon}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-left">
