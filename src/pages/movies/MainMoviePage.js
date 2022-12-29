@@ -46,8 +46,6 @@ const MainMoviePage = ({ message, filter=""}) => {
           };
     }, [filter, pathname, query])
 
-
-    console.log(movies.results)
     return (
         <>
         <Row className="d-flex justify-content-center">

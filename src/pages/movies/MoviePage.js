@@ -25,7 +25,6 @@ function PostPage() {
           axiosReq.get(`/movies/${id}`)
         ])
         setMovie({results: [movie]})
-        console.log(movie)
       } catch(err){
         console.log(err);
       }

@@ -36,7 +36,7 @@ const Movie = (props) => {
   
     const handleDelete = async () => {
       try {
-        await axiosRes.delete(`/posts/${id}/`);
+        await axiosRes.delete(`/movies/${id}`);
         history.goBack();
       } catch (err) {
         console.log(err);
@@ -55,8 +55,8 @@ const Movie = (props) => {
           </div>
         </Media>
       </Card.Body>
-      <Link to={`/movies/${id}`} className={moviePage && styles.smallImageContainer}>
-        <Card.Img src={poster} alt={title} className={moviePage && styles.smallImage}/>
+      <Link to={`/movies/${id}`} className={moviePage ? styles.smallImageContainer : undefined}>
+        <Card.Img src={poster} alt={title} className={moviePage ? styles.smallImage : undefined}/>
       </Link>
       <Card.Body>
         {title && <Card.Title className="text-center">{title}</Card.Title>}
