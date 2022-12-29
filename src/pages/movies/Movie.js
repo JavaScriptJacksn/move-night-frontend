@@ -5,7 +5,7 @@ import styles from '../../styles/Movie.module.css';
 import { Card, Media} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { MoreDropdown } from '../../components/MoreDropdown';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { useHistory} from 'react-router-dom/cjs/react-router-dom';
 import { axiosRes } from '../../api/axiosDefaults';
 
 const Movie = (props) => {
@@ -31,7 +31,7 @@ const Movie = (props) => {
 
 
     const handleEdit = () => {
-      history.push(`/posts/${id}/edit`);
+      history.push(`/movies/${id}/edit`);
     };
   
     const handleDelete = async () => {
