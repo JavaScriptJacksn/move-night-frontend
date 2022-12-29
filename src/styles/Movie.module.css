@@ -14,3 +14,18 @@
   .Heart:hover {
     color: #2142b2;
   }
+
+  .smallImage {
+    width: 20vw;
+    text-align: center;
+  }
+
+  .smallImageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .threeDots {
+    justify-self: flex-end;
+  }

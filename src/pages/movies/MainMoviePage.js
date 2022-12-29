@@ -14,7 +14,6 @@ import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 
 import NoResults from "../../assets/no-results.png";
-import { Card } from "react-bootstrap";
 
 const MainMoviePage = ({ message, filter=""}) => {
 

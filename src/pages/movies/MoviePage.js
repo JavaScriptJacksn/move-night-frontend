@@ -39,9 +39,9 @@ function PostPage() {
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <Movie {...movie.results[0]} setMovie={setMovie} moviePage />
-        <Container className={appStyles.Content}>Reviews</Container>
       </Col>
-      <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
+      <Col lg={4} className={`${appStyles.Content} mt-2 h-100`}>
+        Reviews 
 
       </Col>
     </Row>

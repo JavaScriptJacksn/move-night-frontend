@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
@@ -12,22 +12,6 @@ const NavBar = () => {
   const setCurrentUser = useSetCurrentUser();
 
   const {expanded, setExpanded, ref} = useClickOutsideToggle();
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (ref.current && !ref.current.contains(event.target)){
-        setExpanded(false);
-      }
-    }
-
-    document.addEventListener('mouseup', handleClickOutside)
-
-    return () => {
-      document.removeEventListener('mouseup', handleClickOutside)
-    }
-  }, [ref])
-
-
 
   const handleSignOut = async () => {
     try {
@@ -67,7 +51,7 @@ const NavBar = () => {
       </NavLink>
 
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
-        <i className="fas fa-sign-out-alt"></i>Sign out
+        <i className="fas fa-sign-out-alt"></i>Sign out / {currentUser?.username}
       </NavLink>
     </>
   );
