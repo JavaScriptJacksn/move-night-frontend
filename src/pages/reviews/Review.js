@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useState} from 'react';
 import Rating from '@mui/material/Rating';
 import Row from 'react-bootstrap/Row';
 
@@ -7,12 +7,14 @@ import { Media } from 'react-bootstrap';
 import { MoreDropdown } from '../../components/MoreDropdown';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { axiosRes } from '../../api/axiosDefaults';
+import ReviewEditForm from './ReviewEditForm';
 
 const Review = (props) => {
     const { rating, editor, updated_on, body, setMovie, setReviews, id } = props;
 
     const currentUser = useCurrentUser();
     const is_editor = currentUser?.username === editor;
+    const [showEditForm, setShowEditForm] = useState(false);
 
     const handleDelete =async () => {
         try {
@@ -44,12 +46,26 @@ const Review = (props) => {
             <span className={styles.Owner}>{editor}</span>
             <span className={styles.Date}>{updated_on}</span>
             <br/>
-            <Rating value={rating}></Rating>
+            {showEditForm ? (
+            <ReviewEditForm
+            id={id}
+            content={body}
+            setReviews={setReviews}
+            setShowEditForm={setShowEditForm}
+          />
+          ) : (
+            <>
+            <Rating value={parseInt(rating)}></Rating>
             <p>{body}</p>
+            </>
+          )}
             </Media.Body>
-            {is_editor && (
-                <MoreDropdown handleEdit={() => {}} handleDelete={handleDelete}/>
-            )}
+            {is_editor && !showEditForm && (
+          <MoreDropdown
+            handleEdit={() => setShowEditForm(true)}
+            handleDelete={handleDelete}
+          />
+        )}
         </Media>
         </div>
     );
