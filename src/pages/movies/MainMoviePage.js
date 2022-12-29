@@ -52,6 +52,7 @@ const MainMoviePage = ({ message, filter=""}) => {
         <>
         <Row className="d-flex justify-content-center">
         <Col className="py-2 p-0 p-lg-2" lg={8}>
+            <p>Movie Night is here for all student filmmakers and enthusiasts to share their creations! </p>
           <i className={`fas fa-search ${styles.SearchIcon}`} />
           <Form
             className={styles.SearchBar}
@@ -72,7 +73,7 @@ const MainMoviePage = ({ message, filter=""}) => {
             <>
                 {movies.results.length ? (
                     movies.results.map((movie) => (
-                <Col className="col-md-4 mb-5 d-flex align-items-stretch" key={movie.id}>
+                <Col className="col-md-4 mb-5 d-flex align-items-stretch col-xs-8" key={movie.id}>
                     <Movie key={movie.id} {...movie} setMovies={setMovies} moviePage={false}/>
                 </Col>
                     ))) : (

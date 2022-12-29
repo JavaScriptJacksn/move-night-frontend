@@ -10,9 +10,14 @@ import MoviePage from "./pages/movies/MoviePage";
 import MainMoviePage from "./pages/movies/MainMoviePage";
 import MovieEditForm from "./pages/movies/MovieEditForm";
 import NotFound from './components/NotFound';
+import { useCurrentUser } from "./contexts/CurrentUserContext";
 
 function App() {
+  
+  const currentUser=useCurrentUser();
+
   return (
+
     <div className={styles.App}>
       <NavBar />
       <Container className={styles.Main}>
@@ -23,7 +28,6 @@ function App() {
           <Route exact path="/movies/create" render={() => <MovieCreateForm/>}></Route>
           <Route exact path="/movies/:id" render={() => <MoviePage/>}></Route>
           <Route exact path="/movies/:id/edit" render={() => <MovieEditForm/>}></Route>
-          <Route exact path="editor/movies" render={() => <MainMoviePage filter="owner__profile"/>}></Route>
           <Route render={() => <NotFound />} />
         </Switch>
       </Container>

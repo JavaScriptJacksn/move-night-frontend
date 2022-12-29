@@ -36,22 +36,6 @@ const NavBar = () => {
 
   const loggedInIcons = (
     <>
-      <NavLink
-      className={styles.NavLink}
-      activeClassName={styles.Active}
-      to="/editor/movies"
-    >
-      <i className="fas fa-stream"></i>Your movies
-      </NavLink>
-
-      <NavLink
-      className={styles.NavLink}
-      activeClassName={styles.Active}
-      to="/editor/reviews"
-    >
-      <i className="fas fa-stream"></i>Your reviews
-      </NavLink>
-
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
         <i className="fas fa-sign-out-alt"></i>Sign out / {currentUser?.username}
       </NavLink>
