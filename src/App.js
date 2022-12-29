@@ -23,6 +23,7 @@ function App() {
           <Route exact path="/movies/create" render={() => <MovieCreateForm/>}></Route>
           <Route exact path="/movies/:id" render={() => <MoviePage/>}></Route>
           <Route exact path="/movies/:id/edit" render={() => <MovieEditForm/>}></Route>
+          <Route exact path="editor/movies" render={() => <MainMoviePage filter="owner__profile"/>}></Route>
           <Route render={() => <NotFound />} />
         </Switch>
       </Container>
