@@ -23,8 +23,8 @@ function MovieCreateForm() {
     {
       title : "",
       plot : "",
-      runtime : null,
-      year : null,
+      runtime : "",
+      year : "",
       poster: "",
     }
   );

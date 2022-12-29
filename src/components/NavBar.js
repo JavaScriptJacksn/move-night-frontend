@@ -53,17 +53,17 @@ const NavBar = () => {
       <NavLink
       className={styles.NavLink}
       activeClassName={styles.Active}
-      to="/movies"
+      to="/editor/movies"
     >
-      <i className="fas fa-stream"></i>Added movies
+      <i className="fas fa-stream"></i>Your movies
       </NavLink>
 
       <NavLink
       className={styles.NavLink}
       activeClassName={styles.Active}
-      to="/movies"
+      to="/editor/reviews"
     >
-      <i className="fas fa-stream"></i>Reviews left
+      <i className="fas fa-stream"></i>Your reviews
       </NavLink>
 
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
