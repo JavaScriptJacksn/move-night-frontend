@@ -49,7 +49,7 @@ function MoviePage() {
       <Col lg={4} className={`${appStyles.Content} mt-2 h-100 ${reviewStyles.reviewColumn}`}>
           {currentUser ? (
             <CreateReviewForm
-              user={currentUser}
+              currentUser={currentUser}
               movie={id}
               setPost={setMovie}
               setReviews={setReviews}
@@ -59,7 +59,12 @@ function MoviePage() {
           ) : null}
           {reviews.results.length ? (
             reviews.results.map((review) => (
-              <Review key={review.id} {...review} />
+              <Review
+              key={review.id}
+              {...review}
+              setMovie={setMovie}
+              setReviews={setReviews}
+              />
             ))
           ) : currentUser ? (
             <span>No reviews yet, be the first to comment!</span>

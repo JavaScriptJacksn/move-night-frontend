@@ -4,10 +4,38 @@ import Row from 'react-bootstrap/Row';
 
 import styles from '../../styles/Review.module.css';
 import { Media } from 'react-bootstrap';
+import { MoreDropdown } from '../../components/MoreDropdown';
+import { useCurrentUser } from '../../contexts/CurrentUserContext';
+import { axiosRes } from '../../api/axiosDefaults';
 
 const Review = (props) => {
-    const { rating, editor, updated_on, body } = props;
+    const { rating, editor, updated_on, body, setMovie, setReviews, id } = props;
+
+    const currentUser = useCurrentUser();
+    const is_editor = currentUser?.username === editor;
+
+    const handleDelete =async () => {
+        try {
+            await axiosRes.delete(`/reviews/${id}`)
+
+            setMovie(prevMovie => ({
+                results : [{
+                    ...prevMovie.results[0],
+                    reviews_count: prevMovie.results[0].reviews_count - 1
+                }]
+            }))
+
+            setReviews(prevReviews => ({
+                ...prevReviews,
+                results: prevReviews.results.filter((review) => review.id !== id)
+            }))
+
+        } catch(err){
+
+        }
+    }
     
+
     return (
         <div>
         <hr/>
@@ -19,6 +47,9 @@ const Review = (props) => {
             <Rating value={rating}></Rating>
             <p>{body}</p>
             </Media.Body>
+            {is_editor && (
+                <MoreDropdown handleEdit={() => {}} handleDelete={handleDelete}/>
+            )}
         </Media>
         </div>
     );
