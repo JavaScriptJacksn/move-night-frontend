@@ -9,6 +9,7 @@ import MovieCreateForm from "./pages/movies/MovieCreateForm";
 import MoviePage from "./pages/movies/MoviePage";
 import MainMoviePage from "./pages/movies/MainMoviePage";
 import MovieEditForm from "./pages/movies/MovieEditForm";
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
           <Route exact path="/movies/create" render={() => <MovieCreateForm/>}></Route>
           <Route exact path="/movies/:id" render={() => <MoviePage/>}></Route>
           <Route exact path="/movies/:id/edit" render={() => <MovieEditForm/>}></Route>
-          <Route render={() => <p>Page not found!</p>} />
+          <Route render={() => <NotFound />} />
         </Switch>
       </Container>
     </div>

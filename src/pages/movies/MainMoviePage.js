@@ -11,6 +11,7 @@ import Asset from "../../components/Asset";
 import appStyles from "../../App.module.css";
 import styles from "../../styles/MainMoviePage.module.css";
 import { useLocation } from "react-router";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosReq } from "../../api/axiosDefaults";
 
 import NoResults from "../../assets/no-results.png";
@@ -23,6 +24,7 @@ const MainMoviePage = ({ message, filter=""}) => {
     const [hasLoaded, setHasLoaded] = useState(false);
     const { pathname } = useLocation();
     const [query, setQuery] = useState("");
+    const currentUser = useCurrentUser();
 
     useEffect(() => {
         const fetchMovies = async () => {
@@ -31,7 +33,7 @@ const MainMoviePage = ({ message, filter=""}) => {
                 setMovies(data)
                 setHasLoaded(true)
             } catch(err){
-                console.log(err)
+                // console.log(err)
             }
         }
 
@@ -44,7 +46,7 @@ const MainMoviePage = ({ message, filter=""}) => {
           return () => {
             clearTimeout(timer);
           };
-    }, [filter, pathname, query])
+    }, [filter, pathname, query, currentUser])
 
     return (
         <>

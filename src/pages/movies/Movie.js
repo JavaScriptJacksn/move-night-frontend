@@ -39,7 +39,7 @@ const Movie = (props) => {
         await axiosRes.delete(`/movies/${id}`);
         history.goBack();
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
 

@@ -31,7 +31,7 @@ function MoviePage() {
         setMovie({ results: [movie] });
         setReviews(reviews);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
 

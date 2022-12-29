@@ -15,8 +15,10 @@ import Asset from "../../components/Asset";
 import { FormControl, FormGroup, FormLabel, Image } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import {axiosReq} from "../../api/axiosDefaults";
+import { useRedirect } from "../../hooks/useRedirects";
 
 function MovieCreateForm() {
+  useRedirect("loggedOut")
 
   const [errors, setErrors] = useState({});
   const [movieData, setMovieData] = useState(
@@ -67,7 +69,7 @@ function MovieCreateForm() {
       const {data} = await axiosReq.post('/movies/', formData)
       history.push(`/movies/${data.id}`)
     } catch (err){
-      console.log(err)
+      // console.log(err)
       if (err.response?.status !== 401){
         setErrors(err.response?.data)
       }

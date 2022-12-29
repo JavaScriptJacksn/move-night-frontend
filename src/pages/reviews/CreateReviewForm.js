@@ -45,7 +45,7 @@ function CreateReviewForm(props) {
       }));
       setBody("");
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 

@@ -42,7 +42,7 @@ function MovieEditForm() {
 
             is_editor ? setMovieData({title, plot, runtime, rated, year, poster}) : history.push("/");
         } catch(err){
-            console.log(err)
+            // console.log(err)
         }
     }
 
@@ -84,7 +84,7 @@ function MovieEditForm() {
       await axiosReq.put(`/movies/${id}`, formData)
       history.push(`/movies/${id}`)
     } catch (err){
-      console.log(err)
+      // console.log(err)
       if (err.response?.status !== 401){
         setErrors(err.response?.data)
       }
