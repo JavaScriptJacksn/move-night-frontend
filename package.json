@@ -31,12 +31,6 @@
     "node": "16.x",
     "npm": "8.x"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
