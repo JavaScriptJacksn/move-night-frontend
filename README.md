@@ -187,6 +187,7 @@ All custom CSS code passes through the [W3C Jigsaw Validator](https://jigsaw.w3.
  - This was actually my browser automatically logging me in with saved credentials each time and was fixed by using another browser (Mozilla Firefox) for development
 - During final deployment, incompatible versions of ESLint were causing the app not to deploy
  - Fixed by removing ESLint before deployment, but after validator testing was completed
+ - This was achieved by following Heroku's steps in the build logs by deleting package-lock.json, node_modules and the dependencies for ESLint in package.json and then running the command `npm install`
 
 ### Existing bugs
 - Minor css misalignment of smaller screen sizes main movie home page
