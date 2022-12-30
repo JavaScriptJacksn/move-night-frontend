@@ -17,6 +17,10 @@ import { useHistory } from "react-router-dom";
 import {axiosReq} from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirects";
 
+/*
+  Form for creating movies
+*/
+
 function MovieCreateForm() {
   useRedirect("loggedOut")
 

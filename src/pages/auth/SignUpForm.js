@@ -17,6 +17,13 @@ import {
 import axios from "axios";
 import { useRedirect } from "../../hooks/useRedirects";
 
+/*
+  Sign up form
+
+  From the Moments walkthrough project
+*/
+
+
 const SignUpForm = () => {
 
   useRedirect("logged")

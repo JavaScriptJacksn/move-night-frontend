@@ -3,6 +3,10 @@ import React from "react";
 import { Spinner } from "react-bootstrap";
 import styles from "../styles/Asset.module.css";
 
+/*
+  Multi purpose component to display an image and a message
+*/
+
 const Asset = ({ spinner, src, message }) => {
   return (
     <div className={`${styles.Asset} p-4`}>

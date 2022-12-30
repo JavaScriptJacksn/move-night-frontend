@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 
+/*
+  Hook to handle clicking outside the Navbar
+*/
 
 const useClickOutsideToggle = () => {
     const [expanded, setExpanded] = useState(false);

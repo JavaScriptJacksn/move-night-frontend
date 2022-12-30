@@ -19,6 +19,12 @@ import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirects";
 import { setTokenTimestamp } from "../../utils/utils";
 
+/*
+  Sign in form
+
+  From the Moments walkthrough project
+*/
+
 function SignInForm() {
   const setCurrentUser = useSetCurrentUser();
   useRedirect('loggedIn')

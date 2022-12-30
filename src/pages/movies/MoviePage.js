@@ -13,6 +13,10 @@ import Review from "../reviews/Review";
 import CreateReviewForm from "../reviews/CreateReviewForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
+/*
+  Page to display the complete details and reviews of a movie
+*/
+
 function MoviePage() {
   const { id } = useParams();
   const [movie, setMovie] = useState({ results: [] });

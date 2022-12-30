@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from "./App.module.css";
 import NavBar from "./components/NavBar";
 import Container from "react-bootstrap/Container";
@@ -10,11 +11,8 @@ import MoviePage from "./pages/movies/MoviePage";
 import MainMoviePage from "./pages/movies/MainMoviePage";
 import MovieEditForm from "./pages/movies/MovieEditForm";
 import NotFound from './components/NotFound';
-import { useCurrentUser } from "./contexts/CurrentUserContext";
 
 function App() {
-  
-  const currentUser=useCurrentUser();
 
   return (
 

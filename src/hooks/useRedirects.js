@@ -2,6 +2,11 @@ import axios from "axios"
 import { useEffect } from "react"
 import { useHistory } from "react-router-dom"
 
+/*
+    Hook to handle redirecting users to the home page from
+    pages/urls they shouldn't be able to view 
+*/
+
 export const useRedirect = (userAuthStatus) => {
     const history = useHistory()
 

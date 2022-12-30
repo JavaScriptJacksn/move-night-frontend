@@ -17,6 +17,11 @@ import { axiosReq } from "../../api/axiosDefaults";
 
 import NoResults from "../../assets/no-results.png";
 
+/*
+    Main movie page to display a selection of movie posters and titles
+    with text search functionality
+*/
+
 const MainMoviePage = ({ message, filter=""}) => {
 
     const [movies, setMovies] = useState({

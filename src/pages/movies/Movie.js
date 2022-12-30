@@ -8,6 +8,12 @@ import { MoreDropdown } from '../../components/MoreDropdown';
 import { useHistory} from 'react-router-dom/cjs/react-router-dom';
 import { axiosRes } from '../../api/axiosDefaults';
 
+/*
+  Movie component to display movie informtion
+
+  multi-use for minimised view on home page or large view on the single movie page
+*/
+
 const Movie = (props) => {
   
     const {
