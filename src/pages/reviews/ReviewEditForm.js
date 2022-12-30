@@ -53,13 +53,13 @@ function ReviewEditForm(props) {
         <Form.Control
           className={styles.Form}
           as="textarea"
-          value={body}
+          value={bodyProp}
           onChange={handleBodyChange}
           rows={2}
         />
       </Form.Group>
       <Form.Group>
-        <Rating value={rating} onChange={handleRatingChange} max={5}/>
+        <Rating value={ratingProp} onChange={handleRatingChange} max={5}/>
       </Form.Group>
       <div className="text-right">
         <button

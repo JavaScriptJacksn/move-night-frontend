@@ -184,10 +184,12 @@ All custom CSS code passes through the [W3C Jigsaw Validator](https://jigsaw.w3.
 - Reviews CSS being misaligned to the top of the movie detail component
 - Movie cards on the home page being the same height in rows/ columns irrelevant to poster size
 - After users logged out, refresh tokens were seemingly still provided on a page refresh
- - This was actually my browser automatically logging me in with saved credentials each time and was fixed by using another browser (Mozilla Firefox) for development
+  - This was actually my browser automatically logging me in with saved credentials each time and was fixed by using another browser (Mozilla Firefox) for development
 - During final deployment, incompatible versions of ESLint were causing the app not to deploy
- - Fixed by removing ESLint before deployment, but after validator testing was completed
- - This was achieved by following Heroku's steps in the build logs by deleting package-lock.json, node_modules and the dependencies for ESLint in package.json and then running the command `npm install`
+  - Fixed by removing ESLint before deployment, but after validator testing was completed
+  - This was achieved by following Heroku's steps in the build logs by deleting package-lock.json, node_modules and the dependencies for ESLint in package.json and then running the command `npm install`
+- Review edit forms would not show the fields pre-populated with the review body and rating props
+  - This was fixed simply as it was a mismatch of names for the props passed down to the form, and the ones used in the Review parent component
 
 ### Existing bugs
 - Minor css misalignment of smaller screen sizes main movie home page

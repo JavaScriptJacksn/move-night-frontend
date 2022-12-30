@@ -48,7 +48,8 @@ const Review = (props) => {
             {showEditForm ? (
             <ReviewEditForm
             id={id}
-            content={body}
+            body={body}
+            rating={rating}
             setReviews={setReviews}
             setShowEditForm={setShowEditForm}
           />
