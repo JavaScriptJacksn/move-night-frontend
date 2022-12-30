@@ -191,6 +191,7 @@ All custom CSS code passes through the [W3C Jigsaw Validator](https://jigsaw.w3.
 
 ### Existing bugs
 - Minor css misalignment of smaller screen sizes main movie home page
+- Minor css misalignment on the sign up and sign in forms
 
 ### Missing Features / Future additions
 
