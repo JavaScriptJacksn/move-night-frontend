@@ -185,6 +185,8 @@ All custom CSS code passes through the [W3C Jigsaw Validator](https://jigsaw.w3.
 - Movie cards on the home page being the same height in rows/ columns irrelevant to poster size
 - After users logged out, refresh tokens were seemingly still provided on a page refresh
  - This was actually my browser automatically logging me in with saved credentials each time and was fixed by using another browser (Mozilla Firefox) for development
+- During final deployment, incompatible versions of ESLint were causing the app not to deploy
+ - Fixed by removing ESLint before deployment, but after validator testing was completed
 
 ### Existing bugs
 - Minor css misalignment of smaller screen sizes main movie home page
