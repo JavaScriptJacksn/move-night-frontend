@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from "react";
 
 import Rating from '@mui/material/Rating';

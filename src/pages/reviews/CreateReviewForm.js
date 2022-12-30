@@ -1,5 +1,5 @@
+/* eslint-disable */
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
@@ -11,7 +11,7 @@ import Rating from '@mui/material/Rating'
 import Typography from '@mui/material/Typography'
 
 function CreateReviewForm(props) {
-  const { movie, setMovie, setReviews, user } = props;
+  const { movie, setMovie, setReviews} = props;
   const [body, setBody] = useState("");
   const [rating, setRating] = useState(0);
 

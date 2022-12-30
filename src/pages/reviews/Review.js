@@ -1,6 +1,6 @@
+/* eslint-disable */
 import {React, useState} from 'react';
 import Rating from '@mui/material/Rating';
-import Row from 'react-bootstrap/Row';
 
 import styles from '../../styles/Review.module.css';
 import { Media } from 'react-bootstrap';
@@ -33,11 +33,10 @@ const Review = (props) => {
             }))
 
         } catch(err){
-
+          // console.log(err)
         }
     }
     
-
     return (
         <div>
         <hr/>
